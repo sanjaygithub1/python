@@ -1,7 +1,1 @@
-print
-iiiiiiiIIc
-C
-B
-B
-D
-iii
+print("hello world")
