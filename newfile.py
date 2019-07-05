@@ -14,3 +14,14 @@ elif dish in chinese:
     print("dish is chinese")
 else:
     print("unknown dish")
+
+exp=[1000, 2000, 3000]
+total=0
+for item in exp:
+    total = total + item
+
+print(total)
+
+
+for i in range(1,12):
+ print(i)
