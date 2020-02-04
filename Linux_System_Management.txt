@@ -123,6 +123,7 @@ sudo cat etc/shadow  #To view just username and password
 cat /etc/group   #To list of usergroups
 
 #User Management - Adding & Changing Users
+#https://www.tecmint.com/add-users-in-linux/
 sudo useradd -d /home/icpl14134 -s /bin/bash -g staff -m ric #Creating and adding a new user ric with given parameters
 cat /etc/passwd  #Verify added user ric in the pasword file
 sudo usermod -g gdm #Changing group from staff to gdm
@@ -131,3 +132,9 @@ sudo userdel ric  #Deletign user ric
 cat /etc/passwd  #Verifying user ric does not exist at all
 
 sudo passwd ric #To set up password for user ric
+
+#User Management - Groups
+sudo groupadd sangrp  #Adding/Creating a new group
+cat /etc/group #Verify created group above
+sudo groupmod -g 5000 sangrp #Changing groupid of group sangrp to 5000
+cat /etc/group #Verify changed groupid above
