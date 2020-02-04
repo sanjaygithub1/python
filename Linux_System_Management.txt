@@ -87,6 +87,18 @@ make
 #Once the software is built and ready to run, the files can be copied to their final destinations. The make install command will copy the built program, and its libraries and documentation, to the correct locations.
 make install
 
- 
+#Useful utilities: grep,sed
+grep file*    #Searching files not anything inside directories
+grep -r file* #Seraching file keyword all over including inside directories
+
+apt-catch search apache | grep -i php #Search all packages having apache keyword and filter only having php keyword; i is to ignore case in php keyword
+
+#sed
+# Replacing true with false ; only first occurance; s stands for string; | means passing the output to next command
+echo this is true | sed 's/true/false/'
+echo this is true true true | sed 's/true/false/g' #replacing not only first occuarnce but all; g stands for global changes
+
+
+
 
 
