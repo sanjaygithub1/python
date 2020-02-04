@@ -115,12 +115,22 @@ sudo sysctl net.ipv4.conf.all.log_martians=1 #To change this flag to 1 but it wi
 sudo vi /etc/sysctl.conf #To edit the above flag in the file; uncomment the flag and save the file
 sudo sysctl -p #To make this change persistant across the reboots
 
-#User Management
+#User Management - Files
 cat /etc/passwd  #To view password files on console
 #username:password:userid:groupid:name of the users:home directory:default shell user will use
 
 sudo cat etc/shadow  #To view just username and password
 cat /etc/group   #To list of usergroups
+
+#User Management - Adding & Changing Users
+sudo useradd -d /home/icpl14134 -s /bin/bash -g staff -m ric #Creating and adding a new user ric with given parameters
+cat /etc/passwd  #Verify added user ric in the pasword file
+sudo usermod -g gdm #Changing group from staff to gdm
+cat /etc/passwd #Verifying the group id has been chaged and now it is of group gdm
+sudo userdel ric  #Deletign user ric
+cat /etc/passwd  #Verifying user ric does not exist at all
+
+sudo passwd ric #To set up password for user ric
 
 
 
