@@ -98,6 +98,16 @@ apt-catch search apache | grep -i php #Search all packages having apache keyword
 echo this is true | sed 's/true/false/'
 echo this is true true true | sed 's/true/false/g' #replacing not only first occuarnce but all; g stands for global changes
 
+#Kernel modules
+#A kernel module is a program which can loaded into or unloaded from the kernel upon demand, without necessarily recompiling it (the kernel) or rebooting the system, and is intended to enhance the functionality of the kernel. They are similar like plugins to software. In Linux, all modules end with the .ko extension.
+#https://www.tecmint.com/load-and-unload-kernel-modules-in-linux/
+
+lsmod  #To list all currently loaded modules in Linux, we can use the lsmod (list modules) command 
+cd /lib/modules   #location of all modules; sometimes modules are under /proc/module;
+
+sudo insmod <module name with complete path>  #Installing module
+sudo rmmod <module name with complete path>   #Uninstalling module
+
 
 
 
