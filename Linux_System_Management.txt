@@ -131,10 +131,3 @@ sudo userdel ric  #Deletign user ric
 cat /etc/passwd  #Verifying user ric does not exist at all
 
 sudo passwd ric #To set up password for user ric
-
-
-
-
-
-
-
