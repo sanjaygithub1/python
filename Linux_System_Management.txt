@@ -115,6 +115,15 @@ sudo sysctl net.ipv4.conf.all.log_martians=1 #To change this flag to 1 but it wi
 sudo vi /etc/sysctl.conf #To edit the above flag in the file; uncomment the flag and save the file
 sudo sysctl -p #To make this change persistant across the reboots
 
+#User Management
+cat /etc/passwd  #To view password files on console
+#username:password:userid:groupid:name of the users:home directory:default shell user will use
+
+sudo cat etc/shadow  #To view just username and password
+cat /etc/group   #To list of usergroups
+
+
+
 
 
 
