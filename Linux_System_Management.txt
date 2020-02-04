@@ -138,3 +138,6 @@ sudo groupadd sangrp  #Adding/Creating a new group
 cat /etc/group #Verify created group above
 sudo groupmod -g 5000 sangrp #Changing groupid of group sangrp to 5000
 cat /etc/group #Verify changed groupid above
+
+#Using CRON to automate tasks
+#https://www.tecmint.com/create-and-manage-cron-jobs-on-linux/
