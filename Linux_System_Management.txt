@@ -77,7 +77,15 @@ killall -9 firefox #To kill firefox process by sending signal 9 which means kill
 man 7 signal #will show you a complete table with a brief summary of the meaning of each signal
 
 #Building Software:-
+#https://thoughtbot.com/blog/the-magic-behind-configure-make-make-install
+#It makes sure all of the dependencies for the rest of the build and install process are available, and finds out whatever it needs to know to use those dependencies.
+./configure
 
+#we can invoke make to build the software. This runs a series of tasks defined in a Makefile to build the finished program from its source code.
+make
+
+#Once the software is built and ready to run, the files can be copied to their final destinations. The make install command will copy the built program, and its libraries and documentation, to the correct locations.
+make install
 
  
 
