@@ -108,6 +108,13 @@ cd /lib/modules   #location of all modules; sometimes modules are under /proc/mo
 sudo insmod <module name with complete path>  #Installing module
 sudo rmmod <module name with complete path>   #Uninstalling module
 
+#Kernel Config
+cat /etc/sysctl.conf  #To view system control configutation file on console
+sudo sysctl net.ipv4.conf.all.log_martians  #To view this flag from sysctl file
+sudo sysctl net.ipv4.conf.all.log_martians=1 #To change this flag to 1 but it will not persist across reboots
+sudo vi /etc/sysctl.conf #To edit the above flag in the file; uncomment the flag and save the file
+sudo sysctl -p #To make this change persistant across the reboots
+
 
 
 
