@@ -1,0 +1,84 @@
+#Package Source & Update
+cd /etc/apt  #location where source file storing package info like package names and locations are stored
+vi sources.list  #Package Source file
+sudo vi sources.list  #upgrading rights for further operations
+sudo apt-get update  # To refresh the list of packages (To synchronize the package index files from their sources again)
+
+#Package Management - Search, Install & Remove
+#apt -> Advanced Packaging Tool -> Used to handle packages in Linux
+https://www.geeksforgeeks.org/apt-get-command-in-linux-with-examples/
+
+sudo apt-get upgrade  #To get latest softwware versions
+sudo apt-get install <Package_Name> #This command is used to install or upgrade packages. It is followed by one or more package names the user wishes to install.
+apt-get remove <Package_Name> #it removes the packages instead of installing. It does not remove any configuration files created by the package.
+apt-get purge <Package_Name> #This command removes the packages, and also removes any configuration files related to the packages.
+apt-get autoremove #Sometimes the packages which are automatically installed to satisfy the dependencies of other packages, are no longer needed then autoremove command is used to remove these kind of packages.
+
+#https://www.tecmint.com/useful-basic-commands-of-apt-get-and-apt-cache-for-package-management/
+apt-cache pkgnames #To list all available packages
+apt-cache pkgnames <Package_Name> #To list specific package
+apt-cache search <keyword> #To list of all packages where keyword is part of a package name or any words used in its description
+
+#Logging & Log Management:-
+
+vi /etc/rsyslog.conf
+
+#All system and kernel messages get passed to rsyslogd.For every log message received Rsyslog looks at its configuration file, /etc/rsyslog.conf to determine how to handle that message. 
+Rsyslog looks through the configuration file for all rule statements which match that message and handles the message as each rule statement dictates. 
+If no rule statement matches the message, Rsyslog discards it. Rule statements specify two things:
+1. what messages to match (selectors), and
+2. what to do with matched messages (actions).
+
+
+#Service Management:-
+ls /etc/init.d  #Listing service script files under initi.d directory
+
+#init.d is the sub-directory of /etc directory in Linux file system. 
+#init.d basically contains the bunch of start/stop scripts which are used to control (start,stop,reload,restart) the daemon while the system is running or during boot. 
+There are two types of scripts :  K scripts & S scripts.
+K scripts are known 'kill' scripts while S scripts are known as 'startup' scripts. Kill scripts always run before startup scripts. 
+The configuration file (.conf) of these scripts are located under /etc/init & the scripts that are used as defaults are located under /etc/default.
+Within /etc/init.d you'll find the script rc.local ,this script is automatically executed after all primarily priortized scripts are executed. 
+Which means first K scripts are executed, following by S scripts, then all other remaining init level scripts (if there's any) & finally rc.local script.
+
+#sudo /etc/init.d/<script> <option>
+sudo /etc/init.d/pulseaudio restart
+
+sudo /etc/init.d/speech-dispatcher status   #To know the status of the service
+sudo service smbd start
+sudo service smbd stop
+sudo service --status-all  # From result displayed the prefix "+" means servcie running; "-" means service not running; "?" means service is disabled or in any other status which is not important
+
+
+#Process Managment:-
+#Any pgm running a process and has process entry in the process table within OS
+ps #If you run ps command without any arguments, it displays processes for the current shell.
+ps a or ps e #Display every active process on a Linux system in generic format.
+ps ef #Display full format listing
+ps aux #
+a = show processes for all users
+u = display the process's user/owner
+x = also show processes not attached to a terminal
+
+ps aux | grep firefox  #List all processes having firefox as keyword
+
+top  # list of processes rightnow running and updating periodically with other statistcis like pid, cpu, priority, memory etc
+
+#Process Management kill & killall:-
+#killall is a tool for terminating running processes on your system based on name. In contrast, kill terminates processes based on Process ID number (PID).
+#https://www.linode.com/docs/tools-reference/tools/use-killall-and-kill-to-stop-processes-on-linux/
+#https://linuxize.com/post/how-to-kill-a-process-in-linux/
+
+man kill #manual page of kill command
+pidof firefox  # To know the process ids of firefox process
+kill <process_id> #To kill the process using its process id
+killall firefox # To kill the firefox process
+killall -9 firefox #To kill firefox process by sending signal 9 which means kill
+man 7 signal #will show you a complete table with a brief summary of the meaning of each signal
+
+#Building Software:-
+
+
+ 
+
+

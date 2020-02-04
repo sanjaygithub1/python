@@ -1,0 +1,169 @@
+#Using the consol to list files
+
+#The ls command is a command-line utility for listing the contents of a directory or directories given to it via standard input.
+ls
+
+#To show hidden files and folders pass the -a option to ls  (listing all files)
+ls -a
+
+#List help page of ls command with their option.
+ls --help
+
+#To show hidden files and folders with long listing format; pass the -la option to ls
+ls -la
+
+#To show hidden files and folders with long listing & human readbale format; pass the -lah option to ls
+#h means print sizes in human readable format (e.g., 1K 234M 2G)
+ls -lah
+
+#File Permission
+touch ric  (Creating Empty file with name ric)
+ls -la ric
+chmod 744 ric
+ls -la ric
+chmod 662 ric
+ls -la ric
+chmod g+x ric
+ls -la ric
+chmod g-x ric
+ls -la ric
+
+#File Management
+#present workign directory
+pwd
+
+#Copy ric file to download directory
+cp ric Downloads
+ls -la ric
+ls -la Downloads
+
+#Removing/Deleting files from download directory
+rm Downloads/ric
+
+#Moving files from download foler to current directory
+mv ric Downloads/
+ls -la ric
+ls -la Downloads/
+
+cd Downloads/
+mv ric myfile
+ls -la
+mv myfile ..
+ls
+cd ..
+pwd
+ls -la myfile
+
+
+#File System
+ls /    (All files exist under / which is root of filesystem)
+
+
+rm -i <filename> - ‘-i‘ option in rm command will prompt before deleting a file asking confirmation
+
+#Path Variables
+#This output is a list of directories where executable files are stored. 
+#If you try to run a file or command that isn't in one of the directories in your path, you'll receive an error that says the command is not found.
+echo $PATH
+
+#To run the executable in bin folder you have to set the path to bin folder 
+#so that any executable in bin directory can be executed bu just typing their name rather than full path
+export PATH=$PATH:~/bin
+
+echo $PATH
+
+#Editing Files:-
+#redircting etxt to some new file
+echo this is my testfile > testfile
+
+#concatening files
+cat testfile
+cat testfile testfile
+
+nano testfile  #for editing file with editor
+vi testfile #another editor; "capital A to append text and write; ":wq" writing and quitting the editor; "i" to insert a line
+
+#Psuedo file system
+#dev file system - all devices are stored (Kernel entries)
+ls /dev
+
+#init is the process which starts first in Linux & Unix system first whenever there is system starts
+#that process has number '1' as name in the list at /proc
+ls /proc
+cd /proc/1
+
+ls /sys #settings within operating system like memory, cpu, system control etc...
+cd /sys  
+
+#File Sharing
+#configuration file for smb protocol
+sudo vi smb.conf
+
+sudo service samba restart
+smbclient
+
+#Locating files
+which #looks for executable program where exactly it is located
+which which
+which ls
+which perl
+
+#for finding files
+#find files starts with log and ends with whatever and print the same
+sudo find / -name "log*" -print
+find . -name "*[dD]esktop" -print #irrepective of case
+
+#Redirection
+#redirecting ls output to ls.txt ; overwrite if exist else create new one
+ls > ls.txt
+cat ls.txt
+
+ls >>ls.txt  ; Append in exiting file
+
+These values are always used for stdin, stdout, and stderr:
+
+0: stdin
+1: stdout
+2: stderr
+
+#std error(numerical value 2) messages will be written to errors.txt and remaining output will be displayed on console
+find / -name passwd -print 2>errors.txt
+
+#Special Files
+find / -name passwd -print 2> /dev/null #null will consume all error messages it means we dont care about them
+
+/dev/zero produces a continuous stream of NULL (zero value) bytes.
+/dev/null produces no output.
+##https://unix.stackexchange.com/questions/254384/difference-between-dev-null-and-dev-zero
+ls > /dev/null #null file; Whatever you write to “/dev/null” is discarded, forgotten, thrown into the void. Use /dev/null to Get Rid of Output You Don’t Need
+ls > /dev/zero #zero file
+cat /dev/urandom # Random number generator
+
+
+#Dot files
+. is current directory
+.. is directory above currently right now you are
+
+#Links:- https://www.moreofless.co.uk/linux-difference-soft-symbolic-link-and-hard-link/
+#Symbolic Links:- 
+ln -s <path of file> <shortname for path>  #s means soft/symbolic link
+ls -la <shortname crated for path>
+rm <path of file>   #Deleting/Removing file 
+ls <shortname>   #now shorname link will not be available as we have rmeoved original file previously
+
+#Hard Links:- Do not use option -s to create hardlinks
+In hard link , evenif we delete/remove the orginal file then also shortname link created will return the value of that file
+The soft link is essentially a pointer to the original file and when the original file is deleted the soft link does not point to anything and so “no such file or directory” is reported. 
+The hard link acts more like a mirror of the original file, it actually points to the same “node” in the filesystem that the original file points to, so when we delete the original file the hardlink file still points to the same (and still existing) node in the filesystem.
+
+#Compression:-
+zip <nameofile.zip> <nameoffile.*>  #zipping the files
+zip <nameofile.zip> <nameoffile1> <nameoffile2> ..
+unzip <nameofile.zip> #unzipping the zipped file
+
+tar cfzv <myfile.tar.gz> <nameoffile.*>   #tar files
+ls -la  <myfile.tar.gz>
+tar xfzv <myfile.tar.gz>  #untar the file
+
+#similarly we can use gzip command as well
+
