@@ -11,4 +11,23 @@ suod smartctl /dev/loop0
 #Smartctl is useful on physical Linux servers where smart disks can be checked for errors 
 and extract info regarding the disks that are used behind the Hardware RAID.
 
+#RAID - Redundant Array of Inexpensive disks
+#Raid is just a collection of disks in a pool to become a logical volume
+#https://www.computernetworkingnotes.com/rhce-study-guide/how-to-configure-raid-in-linux-step-by-step-guide.html
+command example: mdadm
+#https://www.tecmint.com/manage-software-raid-devices-in-linux-with-mdadm/
 
+#Logical Volume Management:- https://linoxide.com/linux-how-to/lvm-configuration-linux/
+##Physical Volume (PV): it is a whole disk or a partition of a disk#
+#Volume Group (VG): corresponds to one or more PV
+#Logical Volume (LV): represents a portion of a VG. A LV can only belong to one VG. It’s on a LV that we can create a file system.
+
+#Create Physical Volume
+pvcreate
+
+#Create Logical Volume
+lvcreate
+
+#Display the volumes
+lvdisplay
+pvdisplay
