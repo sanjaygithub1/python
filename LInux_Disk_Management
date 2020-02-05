@@ -1,0 +1,10 @@
+#fdisk Partitioning
+#https://www.geeksforgeeks.org/fdisk-command-in-linux-with-examples/
+sudo fdisk -l #View All Disk Partitions
+sudo fdisk -l /dev/loop0  #To iew all disk partitions on device /dev/loop0
+
+#HDParm
+sudo hdparm /dev/loop0 #To display the harddisk parameters
+
+
+
