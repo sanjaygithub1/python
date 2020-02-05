@@ -29,3 +29,22 @@ netstat -rn #To Print information about network connections, routing tables, int
 #-r:Display  the kernel routing tables & 
 # -n option is used to The –n option makes netstat print addresses as dotted quad IP numbers rather than the symbolic host and network names
 
+#Packet Capture
+sudo tcpdump #To view all tcp traffic; but difficult to understand so use wireshark for more user friendly interface
+
+#IPTables
+#https://www.geeksforgeeks.org/iptables-command-in-linux-with-examples/
+#-L listing
+#-v Verbose
+sudo iptables -L -v
+
+#SSH Server (Secure Shell)
+ssh localhost #To connect to localhost
+#This is used to connect remotely any server/system
+
+#Using Netcat
+nc -l -p 8000  #Setting up a listner at port 8000
+#Open new terminal & connect to localhost at port 8000 and type something & verify at first terminal where listener was created
+nc localhost 8000
+<Type Some Text here>
+
