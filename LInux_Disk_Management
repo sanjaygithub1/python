@@ -31,3 +31,5 @@ lvcreate
 #Display the volumes
 lvdisplay
 pvdisplay
+
+#Formatting
