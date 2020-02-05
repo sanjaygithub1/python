@@ -5,6 +5,10 @@ sudo fdisk -l /dev/loop0  #To iew all disk partitions on device /dev/loop0
 
 #HDParm
 sudo hdparm /dev/loop0 #To display the harddisk parameters
+#https://www.linuxtechi.com/smartctl-monitoring-analysis-tool-hard-drive/
 
+suod smartctl /dev/loop0 
+#Smartctl is useful on physical Linux servers where smart disks can be checked for errors 
+and extract info regarding the disks that are used behind the Hardware RAID.
 
 
