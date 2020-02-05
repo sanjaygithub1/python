@@ -12,4 +12,10 @@ nslookup www.google.com  #To view IP details of given URL and is the old utility
 #Its server which responds to the queries normally domain name resolution. 
 #Its like a phone directory, where you query name and you get phone number. 
 #Nameserver receives hostname or domain name in query and responds back with IP address.
+
 cat /etc/resolv.conf #To view the nameserver details
+
+#Basic Troubleshooting - Ping & Traceroot
+ping <ip address>  #To verify the server is live or not and also to see if the roundtrip time is legitimate or not
+traceroute <ip address>  #To trace the path of data packet throuigh network; we may find where n/w traffic is blocked
+
