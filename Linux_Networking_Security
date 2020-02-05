@@ -19,3 +19,13 @@ cat /etc/resolv.conf #To view the nameserver details
 ping <ip address>  #To verify the server is live or not and also to see if the roundtrip time is legitimate or not
 traceroute <ip address>  #To trace the path of data packet throuigh network; we may find where n/w traffic is blocked
 
+#Informational utilities
+#arp will show the cache entries of IP address & MAC address
+arp -a
+route #To view routing table entries
+
+#https://linoxide.com/linux-how-to/linux-netstat-commands-basic-advanced-examples/
+netstat -rn #To Print information about network connections, routing tables, interface statistics etc.. 
+#-r:Display  the kernel routing tables & 
+# -n option is used to The –n option makes netstat print addresses as dotted quad IP numbers rather than the symbolic host and network names
+
