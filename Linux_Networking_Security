@@ -1,3 +1,15 @@
 #N/W Interface
 ifconfig #To view interface list & details
 ifconfig <name of interface>  #To view specific interface
+
+#DNS - Domain Name System - dig, nslookup and host
+host www.google.com  #To view IP details of given URL
+dig www.google.com  #To view IP details of given URL; More details will be displayed as compared to host result
+nslookup www.google.com  #To view IP details of given URL and is the old utility
+
+#Changing Nameservers
+#Nameserver is the DNS server to which your machine query for name resolutions. 
+#Its server which responds to the queries normally domain name resolution. 
+#Its like a phone directory, where you query name and you get phone number. 
+#Nameserver receives hostname or domain name in query and responds back with IP address.
+cat /etc/resolv.conf #To view the nameserver details
